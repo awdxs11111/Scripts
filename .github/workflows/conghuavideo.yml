@@ -14,7 +14,7 @@ jobs:
       SHAREBODY: ${{ secrets.SHAREBODY }}
       SHAREREWARDBODY: ${{ secrets.SHAREREWARDBODY }}
       TIMEREDBODY: ${{ secrets.TIMEREDBODY }}
-      READBODY: ${{ secrets.READBODY}}
+      VIDEOBODY: ${{ secrets.READBODY}}
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     steps:
