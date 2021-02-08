@@ -92,14 +92,14 @@ if ($.isNode()) {
   );
 
 
-  if (process.env.READBODY && process.env.READBODY.indexOf('#') > -1) {
-    readbodyVal = process.env.READBODY.split('#');
+  if (process.env.VIDEOBODY && process.env.VIDEOBODY.indexOf('#') > -1) {
+    readbodyVal = process.env.VIDEOBODY.split('#');
     console.log(`您选择的是用"#"隔开\n`)
-  } else if (process.env.READBODY && process.env.READBODY.indexOf('\n') > -1) {
-    readbodyVal = process.env.READBODY.split('\n');
+  } else if (process.env.VIDEOBODY && process.env.VIDEOBODY.indexOf('\n') > -1) {
+    readbodyVal = process.env.VIDEOBODY.split('\n');
     console.log(`您选择的是用换行隔开\n`)
   } else {
-    readbodyVal = process.env.READBODY.split()
+    readbodyVal = process.env.VIDEOBODY.split()
   }
 
   if (process.env.SHAREREWARDBODY && process.env.SHAREREWARDBODY.indexOf('#') > -1) {
@@ -196,7 +196,7 @@ function showmsg() {
 ////////////////////////////////////////////////////////////////////////
 
 async function AC(){
-  console.log('\n\n'+'TASKCENTERBODY copy下面的值'+'\n\n'+taskcenterbodyVal+'\n\n\n\n'+'SHAREBODY copy下面的值'+'\n\n'+sharebodyVal+'\n\n\n\n'+'SHAREREWARDBODY copy下面的值'+'\n\n'+sharerewardbodyVal+'\n\n\n\n'+'TIMEREDBODY copy下面的值'+'\n\n'+timeredbodyVal+'\n\n\n\n'+'READBODY copy下面的值'+'\n\n'+readbodyVal+'\n\n')
+  console.log('\n\n'+'TASKCENTERBODY copy下面的值'+'\n\n'+taskcenterbodyVal+'\n\n\n\n'+'SHAREBODY copy下面的值'+'\n\n'+sharebodyVal+'\n\n\n\n'+'SHAREREWARDBODY copy下面的值'+'\n\n'+sharerewardbodyVal+'\n\n\n\n'+'TIMEREDBODY copy下面的值'+'\n\n'+timeredbodyVal+'\n\n\n\n'+'VIDEOBODY copy下面的值'+'\n\n'+readbodyVal+'\n\n')
 }
 
 async function videoread(){
