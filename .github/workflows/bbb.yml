@@ -3,7 +3,7 @@ name: 步步宝 0.3,50,100,200
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 * * * *'
+    - cron: '0 */2 * * *'
   watch:
     types: started
   repository_dispatch:
@@ -32,7 +32,7 @@ jobs:
           npm install
       - name: '运行 【步步宝】'
         run: |
-          node BBB.js
+          node Task/BBB.js
         env:
           BBB_CK: ${{ secrets.BBB_CK }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
