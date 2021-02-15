@@ -1,5 +1,5 @@
 /*
-更新时间: 2021-02-15 12:29
+更新时间: 2021-02-15 16:40
 Github Actions使用方法见[@lxk0301](https://raw.githubusercontent.com/lxk0301/scripts/master/githubAction.md) 使用方法大同小异
 
 请自行抓包，阅读文章和看视频，倒计时转一圈显示青豆到账即可，多看几篇文章和视频，获得更多包数据，抓包地址为"https://ios.baertt.com/v5/article/complete.json"，在Github Actions中的Secrets新建name为'YOUTH_READ'的一个值，拷贝抓包的请求体到下面Value的文本框中，添加的请求体越多，获得青豆次数越多，本脚本不包含任何推送通知
@@ -10,9 +10,10 @@ Github Actions使用方法见[@lxk0301](https://raw.githubusercontent.com/lxk030
 
 const $ = new Env("中青看点阅读")
 //const notify = $.isNode() ? require('./sendNotify') : '';
-let ReadArr = [], readscore = 0;
-let YouthBody = $.getdata('youth_autoread');
-
+let ReadArr = [], timebodyVal ="";
+let YouthBody = $.getdata('youth_autoread')||$.getdata("zqgetbody_body");
+let artsnum = 0, videosnum = 0;
+let videoscore = 0,readscore = 0;
 if (isGetbody = typeof $request !==`undefined`) {
    Getbody();
    $done()
@@ -38,7 +39,7 @@ if(!$.isNode()&&!YouthBody==true){
 
   } else if (!$.isNode() && YouthBody.indexOf("&") > -1) {
     YouthBody = YouthBody.split("&")
-  }
+  };
   Object.keys(YouthBody).forEach((item) =>{
     if (YouthBody[item]) {
       ReadArr.push(YouthBody[item])
@@ -60,7 +61,8 @@ if(!$.isNode()&&!YouthBody==true){
       await AutoRead();
     };
  }
-   console.log(`-------------------------\n\n中青看点共完成${$.index}次阅读，共计获得${readscore}个青豆，阅读请求全部结束`)
+   $.log("本次共阅读"+artsnum+"次资讯，共获得"+readscore+"青豆\n观看"+videosnum+"次视频，获得"+videoscore+"青豆(不含0青豆次数)\n")
+   console.log(`-------------------------\n\n中青看点共完成${$.index}次阅读，共计获得${readscore+videoscore}个青豆，阅读请求全部结束`)
 })()
   .catch((e) => $.logErr(e))
   .finally(() => $.done())
@@ -70,10 +72,18 @@ function AutoRead() {
   return new Promise((resolve, reject) =>{
     $.post(batHost('article/complete.json', articlebody), async(error, response, data) =>{
       let readres = JSON.parse(data);
-      console.log(JSON.stringify(readres,null,2))
+      // $.log(JSON.stringify(readres,null,2))
       if (readres.error_code == '0' && data.indexOf("read_score") > -1 && readres.items.read_score > 0) {
         console.log(`\n本次阅读获得${readres.items.read_score}个青豆，请等待30s后执行下一次阅读\n`);
-        readscore += readres.items.read_score;
+        if(data.indexOf("ctype")>-1){
+         if(readres.items.ctype==0){
+          artsnum += 1
+          readscore += readres.items.read_score;
+         } else if(readres.items.ctype==3){
+          videosnum += 1
+          videoscore += readres.items.read_score;
+         } 
+        }
         if ($.index % 2 == 0) {
           if ($.isNode() && process.env.YOUTH_ATIME) {
             timebodyVal = process.env.YOUTH_ATIME;
