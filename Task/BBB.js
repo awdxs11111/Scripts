@@ -52,7 +52,7 @@ now = new Date(new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8
 if (typeof $request !== 'undefined') {
    if ($request && $request.method != `OPTIONS` && $request.url.indexOf('user/profile') != -1) {
      const CookieVal = JSON.stringify($request.headers)
-if(CookieVal)$.setdata(CookieVal,'bbb_ck')
+if(CookieVal)$.setdata(CookieVal,'BBB_CK')
      $.log(`CookieVal:${CookieVal}`)
      $.msg($.name,"获取Cookie成功")
      $.done()
