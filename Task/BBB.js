@@ -30,7 +30,7 @@ hostname = bububao.duoshoutuan.com,
 
 const $ = new Env('步步寶')
 let notice = ''
-let CookieVal = $.getdata('bbb_ck')
+let CookieVal = $.getdata('process.env.bbb_ck')
 
 if ($.isNode()) {
       CookieVal = process.env.BBB_CK;
