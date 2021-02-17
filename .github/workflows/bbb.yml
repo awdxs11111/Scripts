@@ -1,4 +1,4 @@
-name: 步步宝 0.3,50,100,200
+name: 步步宝
 
 on:
   workflow_dispatch:
@@ -16,9 +16,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with：
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
+          repository: adwktt/adwktt
           node-version: ${{ matrix.node-version }}
       - name: Cache node_modules
         uses: actions/cache@v2 # 使用 GitHub 官方的缓存 Action。
