@@ -32,7 +32,7 @@ jobs:
           npm install
       - name: '运行 【步步宝】'
         run: |
-          node BBB.js
+          node Task/BBB.js
         env:
           BBB_CK: ${{ secrets.BBB_CK }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
