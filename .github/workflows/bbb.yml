@@ -31,7 +31,7 @@ jobs:
         run: |
           npm install
       - name: '运行 【步步宝】'
-        if: process.env.bbb_ck
+        if: bbb_ck
         run: |
           cd ~/JavaScript
           node Task/BBB.js
