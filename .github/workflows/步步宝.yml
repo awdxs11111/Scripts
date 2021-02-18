@@ -38,6 +38,7 @@ jobs:
       - name: '运行 【步步宝app】'
         run: |
           cd ~/jd_scripts/work
-          node BBB.js
+          node Task/BBB.js
         env:
           TZ: Asia/shanghai
+          BBB_CK: ${{ secrets.BBB_CK }}
