@@ -37,8 +37,7 @@ jobs:
           npm install
       - name: '运行 【步步宝app】'
         run: |
-          cd ~/jd_scripts/work
-          node Task/BBB.js
+          cd ~/scripts/Task
+          node BBB.js
         env:
           TZ: Asia/shanghai
-          BBB_CK: ${{ secrets.BBB_CK }}
