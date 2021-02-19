@@ -3,7 +3,7 @@ name: 多看点 0.5，1，3，5，15，50
 on:
   workflow_dispatch:
   schedule:
-    - cron: '20 * * * *'
+    - cron: '0 0 1 1 *'
   watch:
     types: started
   repository_dispatch:
@@ -32,14 +32,11 @@ jobs:
           npm install
       - name: '运行 【多看点】'
         run: |
-          node dkd.js
+          node Task/duokandian.js
         env:
-          DKDURL: ${{ secrets.DKDURL }}
-          DKDHD: ${{ secrets.DKDHD }}
-          DKDBODY: ${{ secrets.DKDBODY }}
-          DKDTXURL: ${{ secrets.DKDTXURL }}
-          DKDTXHD: ${{ secrets.DKDTXHD }}
-          DKDTXBODY: ${{ secrets.DKDTXBODY }}
+          DKD_duokandianBODY: ${{ DKD_duokandianBODY }}
+          DKD_duokandianvideoBODY: ${{ DKD_duokandianvideoBODY }}
+          DKD_duokandianCASH: ${{ DKD_duokandianCASH }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
           FRUITSHARECODES: ${{ secrets.FRUITSHARECODES }}
