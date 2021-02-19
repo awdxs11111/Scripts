@@ -29,7 +29,7 @@ jobs:
           cd ~/JavaScript
           npm install
       - name: '运行 【多看点】'
-        if: env.XP_refreshTOKEN
+        if: env.DKD_duokandianvideoBODY
         run: |
           cd ~/JavaScript
           node Task/duokandian.js
