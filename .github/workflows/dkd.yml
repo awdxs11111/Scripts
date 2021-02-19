@@ -28,11 +28,11 @@ jobs:
         run: |
           cd ~/JavaScript
           npm install
-      - name: '运行 【笑谱】'
+      - name: '运行 【多看点】'
         if: env.XP_refreshTOKEN
         run: |
           cd ~/JavaScript
-          node Task/iboxpay.js
+          node Task/duokandian.js
         env:
          
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
