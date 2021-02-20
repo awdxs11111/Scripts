@@ -55,8 +55,8 @@ hostname = api-9f9d25.sz365.cn
 
 */
 const $ = new Env('闪挣');
-let szurl = $.getdata('szurl')
-let szhd = $.getdata('szhd')
+let szurl = env.szurl('szurl')
+let szhd = env.szhd('szhd')
 !(async () => {
   if (typeof $request !== "undefined") {
     await szck()
