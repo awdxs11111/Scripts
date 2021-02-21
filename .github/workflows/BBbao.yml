@@ -12,9 +12,7 @@ jobs:
     steps:
       - name: Checkout
         run: |
-
           git clone https://github.com/a1564471347/Scripts.git ~/Scripts
-
       - name: Use Node.js 14.x
         uses: actions/setup-node@v1
         with:
@@ -29,5 +27,4 @@ jobs:
         run: |
           cd ~/Scripts
           node Task/BBB.js
-        env:
-          BBB_CK: ${{ secrets.BBB_CK }}
+        
