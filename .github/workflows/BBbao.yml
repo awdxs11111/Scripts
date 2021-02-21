@@ -26,4 +26,4 @@ jobs:
       - name: '运行 【步步宝】'
         run: |
           cd ~/adwktt
-          node Task/BBB.js
+          node BBB.js
