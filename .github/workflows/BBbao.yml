@@ -29,3 +29,5 @@ jobs:
         run: |
           cd ~/Scripts
           node Task/BBB.js
+        env:
+          BBB_CK: ${{ secrets.BBB_CK }}
