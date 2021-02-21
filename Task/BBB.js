@@ -30,14 +30,16 @@ hostname = bububao.duoshoutuan.com,
 
 const $ = new Env('步步寶')
 let notice = ''
-let CookieVal = $.getdata('bbb_ck')
-
 if ($.isNode()) {
       console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
       console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
 }
 
 
+CookieArr=[{"store":"appstore","tokenstr":"559FE1635CE0FAB2E9D6CB27B525892G1611058371","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","version":"11","idfa":"6A512375-6547-48CF-AB48-A08D67EC8D30","User-Agent":"BBB/133 CFNetwork/1126 Darwin/19.5.0","platform":"2","imei":"8A6BFFF9-17D2-4CF6-BC4B-94EE99316DFF","Cookie":"PHPSESSID=91v38taqi5smdgeb0l8rkm3ig3","Host":"bububao.duoshoutuan.com","Accept-Language":"zh-cn","Accept":"*/*","Content-Length":"0"}]
+
+let dayjinbi=0;
+let lasttxTime=0;
 
 now = new Date(new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*60*60*1000);  
 
@@ -61,7 +63,7 @@ $.msg($.name,"開始🎉🎉🎉")
       await sleepStatus()
       await clickTaskStatus()
       await watchTaskStatus()
-      //await helpStatus()
+      await helpStatus()
       await getNewsId()
       await checkWaterNum()
       await getQuestionId()
