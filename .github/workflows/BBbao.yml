@@ -12,18 +12,17 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/adwktt/adwktt.git ~/adwktt
       - name: Use Node.js 14.x
         uses: actions/setup-node@v1
         with:
           node-version: 14.x
       - name: npm install
         run: |
-          cd ~/adwktt
+          cd ~/Scripts
           npm install
           npm install cron
           npm install request
       - name: '运行 【步步宝】'
         run: |
-          cd ~/adwktt
-          node BBB.js
+          cd ~/Scripts
+          node Task/BBB.js
