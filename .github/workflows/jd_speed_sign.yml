@@ -1,8 +1,8 @@
-name: 京东家庭号
+name: 京东极速
 on:
   workflow_dispatch:
   schedule:
-    - cron: '41 * * * *'
+    - cron: '0 */6 * * *'
 jobs:
   build:
 
@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/fenglinefg/hello-world.git -b sync-ZhiYi-N-jd_scripts ~/Scripts
+          git clone https://github.com/a1564471347/Scripts ~/Scripts
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -27,10 +27,10 @@ jobs:
         run: |
           cd ~/Scripts
           npm install
-      - name: '运行 【京东家庭号】'
+      - name: '运行 【京东极速】'
         run: |
           cd ~/Scripts
-          node jd_family.js
+          node jd_speed_sign.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
