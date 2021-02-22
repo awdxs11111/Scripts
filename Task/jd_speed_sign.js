@@ -35,7 +35,12 @@ if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
     cookiesArr.push(jdCookieNode[item])
   })
-  if (process.env.JD_DEBUG && process.env.JD_DEBUG === 'false') console.log = () => {
+if (process.env.CookieJD && process.env.CookieJD.split('\n').length > 0) {
+   CookieJDVal = process.env.CookieJD.split('\n');
+  } else  {
+   CookieJDVal = process.env.CookieJD.split()
+  };
+if (process.env.JD_DEBUG && process.env.JD_DEBUG === 'false') console.log = () => {
   };
 } else {
   cookiesArr = [$.getdata('CookieJD'), $.getdata('CookieJD2'), ...jsonParse($.getdata('CookiesJD') || "[]").map(item => item.cookie)].filter(item => !!item);
