@@ -34,10 +34,10 @@ let today2 = formatDateTime(todaytimes);
 
 //////////////////////////////////////////////////////////////////
 const runsteptokenArr = [token=f29f0415-1cfa-47d1-bb88-046761f61e25];
-let runsteptokenVal = "";
+let runsteptokenVal = "token=f29f0415-1cfa-47d1-bb88-046761f61e25";
 
 const runstepkeyArr = [{"User-Agent":"zou lu zhuan qian/1.5.1 (iPhone; iOS 13.5; Scale/3.00)","Host":"runstep.kujievip.com","Connection":"keep-alive","Accept-Language":"zh-Hans-CN;q=1","Accept-Encoding":"gzip, deflate, br","Accept":"*/*"}];
-let runstepkeyVal = "";
+let runstepkeyVal = "{"User-Agent":"zou lu zhuan qian/1.5.1 (iPhone; iOS 13.5; Scale/3.00)","Host":"runstep.kujievip.com","Connection":"keep-alive","Accept-Language":"zh-Hans-CN;q=1","Accept-Encoding":"gzip, deflate, br","Accept":"*/*"}";
 
 
 if ($.isNode()) {
