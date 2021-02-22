@@ -33,10 +33,10 @@ let today1 = formatDateTime(new Date());
 let today2 = formatDateTime(todaytimes);
 
 //////////////////////////////////////////////////////////////////
-const runsteptokenArr = [];
+const runsteptokenArr = [token=f29f0415-1cfa-47d1-bb88-046761f61e25];
 let runsteptokenVal = "";
 
-const runstepkeyArr = [];
+const runstepkeyArr = [{"User-Agent":"zou lu zhuan qian/1.5.1 (iPhone; iOS 13.5; Scale/3.00)","Host":"runstep.kujievip.com","Connection":"keep-alive","Accept-Language":"zh-Hans-CN;q=1","Accept-Encoding":"gzip, deflate, br","Accept":"*/*"}];
 let runstepkeyVal = "";
 
 
