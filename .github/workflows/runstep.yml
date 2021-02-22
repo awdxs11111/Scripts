@@ -25,7 +25,12 @@ jobs:
       - name: npm install
         if: env.RUNSTEP_TOKEN
         run: |
-          cd ~/Scripts
+          cd ~/JavaScript
+          npm install
+      - name: '运行 【走路赚钱】'
+        if: env.RUNSTEP_TOKEN
+        run: |
+          cd ~/JavaScript
           node Task/runstep.js
         env: 
           
