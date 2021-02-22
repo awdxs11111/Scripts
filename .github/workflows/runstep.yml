@@ -1,4 +1,4 @@
-name: 步步宝
+name: 走路赚钱
 
 on:
   workflow_dispatch:
@@ -23,8 +23,8 @@ jobs:
           npm install
           npm install cron
           npm install request
-      - name: '运行 【步步宝】'
+      - name: '运行 【走路赚钱】'
         run: |
           cd ~/Scripts
-          node Task/BBB.js
+          node Task/runstep.js
         
