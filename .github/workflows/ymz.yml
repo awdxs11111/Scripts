@@ -48,8 +48,7 @@ jobs:
         YMZBODY: ${{ secrets.YMZBODY }}
         YMZBODY1: ${{ secrets.YMZBODY1 }}
 		
-        
-    steps:
+      steps:
       - name: Checkout
         run: |
           git clone https://github.com/a1564471347/Scripts.git ~/Scripts
