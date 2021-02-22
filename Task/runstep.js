@@ -40,6 +40,8 @@ let runsteptokenVal = "";
 const runstepkeyArr = [{"User-Agent":"zou lu zhuan qian/1.5.1 (iPhone; iOS 13.5; Scale/3.00)","Host":"runstep.kujievip.com","Connection":"keep-alive","Accept-Language":"zh-Hans-CN;q=1","Accept-Encoding":"gzip, deflate, br","Accept":"*/*"},
 {"User-Agent":"zou lu zhuan qian/1.5.1 (iPhone; iOS 13.5; Scale/3.00)","Host":"runstep.kujievip.com","Connection":"keep-alive","Accept-Language":"zh-Hans-CN;q=1","Accept-Encoding":"gzip, deflate, br","Accept":"*/*"}];
 let runstepkeyVal = "";
+let dayjinbi=0;
+let lasttxTime=0;
 
 
 if ($.isNode()) {
