@@ -30,7 +30,7 @@ jobs:
       - name: '运行 【京东极速】'
         run: |
           cd ~/Scripts
-          node jd_speed_sign.js
+          node Task/jd_speed_sign.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
