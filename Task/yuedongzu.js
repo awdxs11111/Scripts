@@ -54,7 +54,8 @@ const logs = 0; // 0为关闭日志，1为开启
 const notifyttt = 1 // 0为关闭外部推送，1为12 23 点外部推送
 const notifyInterval = 2; // 0为关闭通知，1为所有通知，2为12 23 点通知  ， 3为 6 12 18 23 点通知 
 $.message = '', COOKIES_SPLIT = '', CASH = '', ddtime = '';
-const yuedongzutokenArr = [];
+const yuedongzutokenArr = [Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wveXVlZG9uZ3p1LnlpY2hlbmd3LmNuXC9hcHBzXC9sb2dpblwvd2VjaGF0IiwiaWF0IjoxNjE0NjA4NDc2LCJleHAiOjIwNTM2MjA4NDc2LCJuYmYiOjE2MTQ2MDg0NzYsImp0aSI6IlF5TU5hekxIVUNHN3RLVVMiLCJzdWIiOjMxMDAxLCJwcnYiOiI0MWRmODgzNGYxYjk4ZjcwZWZhNjBhYWVkZWY0MjM0MTM3MDA2OTBjIn0.N_R75Vg-UKRutrcPiAcxg-DszuJMa7hJpuxNbGR0DgI
+Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wveXVlZG9uZ3p1LnlpY2hlbmd3LmNuXC9hcHBzXC9sb2dpblwvd2VjaGF0IiwiaWF0IjoxNjE0NjA4Njc5LCJleHAiOjIwNTM2MjA4Njc5LCJuYmYiOjE2MTQ2MDg2NzksImp0aSI6ImZuaE5DQWJJMEJiNmdoNFIiLCJzdWIiOjMxMDE1LCJwcnYiOiI0MWRmODgzNGYxYjk4ZjcwZWZhNjBhYWVkZWY0MjM0MTM3MDA2OTBjIn0.IZ5ZpwnoWYbaJEmCJiQ8GYhtLFKo9KI_BHMXRk42LOQ];
 let yuedongzutokenVal = ``;
 let middleyuedongzuTOKEN = [];
 if ($.isNode()) {
