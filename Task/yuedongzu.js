@@ -11,6 +11,7 @@ boxjs链接  https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/ziye.
 
 2.28 制作
 3.1 完成
+3.1-2 修复前置报错
 
 ⚠️ 时间设置    0,30 0-23 * * *    每天 25次以上就行 
 
@@ -54,8 +55,7 @@ const logs = 0; // 0为关闭日志，1为开启
 const notifyttt = 1 // 0为关闭外部推送，1为12 23 点外部推送
 const notifyInterval = 2; // 0为关闭通知，1为所有通知，2为12 23 点通知  ， 3为 6 12 18 23 点通知 
 $.message = '', COOKIES_SPLIT = '', CASH = '', ddtime = '';
-const yuedongzutokenArr = [Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wveXVlZG9uZ3p1LnlpY2hlbmd3LmNuXC9hcHBzXC9sb2dpblwvd2VjaGF0IiwiaWF0IjoxNjE0NjA4NDc2LCJleHAiOjIwNTM2MjA4NDc2LCJuYmYiOjE2MTQ2MDg0NzYsImp0aSI6IlF5TU5hekxIVUNHN3RLVVMiLCJzdWIiOjMxMDAxLCJwcnYiOiI0MWRmODgzNGYxYjk4ZjcwZWZhNjBhYWVkZWY0MjM0MTM3MDA2OTBjIn0.N_R75Vg-UKRutrcPiAcxg-DszuJMa7hJpuxNbGR0DgI
-Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wveXVlZG9uZ3p1LnlpY2hlbmd3LmNuXC9hcHBzXC9sb2dpblwvd2VjaGF0IiwiaWF0IjoxNjE0NjA4Njc5LCJleHAiOjIwNTM2MjA4Njc5LCJuYmYiOjE2MTQ2MDg2NzksImp0aSI6ImZuaE5DQWJJMEJiNmdoNFIiLCJzdWIiOjMxMDE1LCJwcnYiOiI0MWRmODgzNGYxYjk4ZjcwZWZhNjBhYWVkZWY0MjM0MTM3MDA2OTBjIn0.IZ5ZpwnoWYbaJEmCJiQ8GYhtLFKo9KI_BHMXRk42LOQ];
+const yuedongzutokenArr = [];
 let yuedongzutokenVal = ``;
 let middleyuedongzuTOKEN = [];
 if ($.isNode()) {
@@ -108,6 +108,7 @@ if (!COOKIE.yuedongzutokenVal) {
         Length = 0
     } else Length = yuedongzutokenArr.length
 }
+
 function GetCookie() {
     if ($request && $request.url.indexOf("login") >= 0) {
         modifiedHeaders = $request.headers;
@@ -721,7 +722,7 @@ function zhuan_index(timeout = 0) {
                         ggks = $.zhuan_index.renwu.find(item => item.type === 11);
                         bss = $.zhuan_index.renwu.find(item => item.type === 13);
                         rwrw = $.zhuan_index.renwu.find(item => item.st === 1);
-                        qds = $.zhuan_index.jinbi_html.find(item => item.html === "当天");
+                        qds = $.zhuan_index.jinbi_html.find(item => item.html === "当天" ||item.html === "\u5f53\u5929" );
                         if (qds.is_sign == 1) {
                             console.log(`每日签到：已完成，获得${qds.jinbi}金币\n`)
                             $.message += `【每日签到】：已完成，获得${qds.jinbi}金币\n`;
@@ -753,6 +754,8 @@ function zhuan_index(timeout = 0) {
 async function ssp() {
     console.log(`视频任务：开始执行\n`);
     $.message += `【视频任务】：开始执行\n`;
+    c_type = 0
+    mini_pos = 0
     tid = 14
     pos = 1
     await chuansj()
