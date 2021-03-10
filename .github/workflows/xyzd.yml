@@ -46,8 +46,6 @@ jobs:
         XYZDURL: ${{ secrets.XYZDURL }}
         XYZDHD: ${{ secrets.XYZDHD }}
         XYZDBODY: ${{ secrets.XYZDBODY }}
-		
-        
     steps:
       - name: Checkout
         run: |
