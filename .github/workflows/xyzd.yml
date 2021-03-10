@@ -46,6 +46,8 @@ jobs:
         XYZDURL: ${{ secrets.XYZDURL }}
         XYZDHD: ${{ secrets.XYZDHD }}
         XYZDBODY: ${{ secrets.XYZDBODY }}
+		
+        
     steps:
       - name: Checkout
         run: |
@@ -58,7 +60,6 @@ jobs:
         if: env.XYZDURL
         run: |
           cd ~/Scripts
-          git checkout main
           npm install
       - name: '运行 【幸运赚点】'
         if: env.XYZDURL
